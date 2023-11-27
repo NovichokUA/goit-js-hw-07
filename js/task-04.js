@@ -33,6 +33,7 @@ function handleSubmit(event) {
     registerValue.email = `${email}`.trim();
     registerValue.password = `${password}`.trim();
   }
+
   console.log(registerValue);
 
   form.reset();
