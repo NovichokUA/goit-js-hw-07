@@ -6,13 +6,6 @@
 // колекції має рендеритись нова.Після натискання на кнопку Destroy колекція елементів має
 // очищатися.
 
-//<div id="controls">
-//<input type="number" min="1" max="100" step="1" />
-//<button type="button" data-create>Create</button>
-//<button type="button" data-destroy>Destroy</button>
-//</div>
-// <div id="boxes"></div>;
-
 // Після натискання користувачем на кнопку Create треба провалідувати значення в input, воно
 // має бути в межах від 1 до 100 включно.Тільки якщо воно задоволяє умову, мають додаватися
 // нові < div > елементи в DOM.
@@ -41,12 +34,19 @@ btnCreate.addEventListener("click", getNumber);
 
 btnDestroy.addEventListener("click", putAwayBoxes);
 
-function getNumber(event) {
-  let i = inputNumber.value;
-  return i;
+function getNumber() {
+  let amount = inputNumber.value;
+  if (amount >= 1 && amount <= 100) {
+    createBoxes(amount);
+  } else {
+    alert("Введіть число від 1 до 100");
+  }
+  inputNumber.value = "";
 }
 
-function putAwayBoxes() {}
+function putAwayBoxes() {
+  divChange.innerHTML = "";
+}
 
 function createBoxes(amount) {
   let count = 10;
@@ -55,7 +55,7 @@ function createBoxes(amount) {
   for (let index = 1; index <= amount; index++) {
     let color = getRandomHexColor();
     let colorBorder = getRandomHexColor();
-    const markup = `<div 
+    const strHtml = `<div 
     style="
     width:${i}px; 
     height:${i}px; 
@@ -63,14 +63,11 @@ function createBoxes(amount) {
     margin-left: ${b}px;
     background-color: ${color}">
     </div>`;
-    divChange.insertAdjacentHTML("beforeend", markup);
+    divChange.insertAdjacentHTML("beforeend", strHtml);
     b -= 5;
     i += count;
-    console.log(divChange);
   }
 }
-
-createBoxes(2);
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)

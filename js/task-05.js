@@ -9,15 +9,6 @@
 // рандомним кольором
 // На <body> і span.color значення одного й того самого кольору
 
-//<div class="widget">
-//  <p>
-//    Background color: <span class="color">-</span>
-//  </p>
-//  <button type="button" class="change-color">
-//    Change color
-//  </button>
-//</div>;
-
 const body = document.body;
 
 const button = document.querySelector(".change-color");

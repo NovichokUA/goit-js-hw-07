@@ -5,10 +5,6 @@
 const list = document.querySelector("#categories");
 const listItem = document.querySelectorAll(".item");
 console.log(`Nuber of categories: ${listItem.length}`);
-// listItem.forEach((item) => {
-//   console.log(`category: ${item.children[0].textContent}`),
-//     console.log(`Elements: ${item.children[1].children.length}`);
-// });
 function result(array) {
   for (const item of array) {
     let index = 0;
