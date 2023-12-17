@@ -49,6 +49,7 @@ function putAwayBoxes() {
 }
 
 function createBoxes(amount) {
+  divChange.innerHTML = "";
   let count = 10;
   let i = 30;
   let b = 100;
@@ -63,7 +64,7 @@ function createBoxes(amount) {
     margin-left: ${b}px;
     background-color: ${color}">
     </div>`;
-    divChange.innerHTML=strHtml;
+    divChange.insertAdjacentHTML("beforeend", strHtml);
     b -= 5;
     i += count;
   }
