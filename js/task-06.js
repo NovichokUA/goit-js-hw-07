@@ -63,7 +63,7 @@ function createBoxes(amount) {
     margin-left: ${b}px;
     background-color: ${color}">
     </div>`;
-    divChange.insertAdjacentHTML("beforeend", strHtml);
+    divChange.innerHTML("beforeend", strHtml);
     b -= 5;
     i += count;
   }
@@ -73,4 +73,5 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
+    
 }
