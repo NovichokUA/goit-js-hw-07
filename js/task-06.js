@@ -63,7 +63,7 @@ function createBoxes(amount) {
     margin-left: ${b}px;
     background-color: ${color}">
     </div>`;
-    divChange.innerHTML("beforeend", strHtml);
+    divChange.innerHTML=strHtml;
     b -= 5;
     i += count;
   }
